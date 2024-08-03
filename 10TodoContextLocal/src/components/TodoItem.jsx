@@ -28,6 +28,7 @@ function TodoItem({ todo }) {
                 className="cursor-pointer"
                 checked={todo.completed} // checkbox status
                 onChange={toggleCompleted} // toggleComplete function call on change
+                disabled = {isTodoEditable}
             />
             <input
                 type="text"
