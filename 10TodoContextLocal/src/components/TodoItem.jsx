@@ -28,6 +28,7 @@ function TodoItem({ todo }) {
                 className="cursor-pointer"
                 checked={todo.completed} // checkbox status
                 onChange={toggleCompleted} // toggleComplete function call on change
+                disabled = {isTodoEditable}
             />
             <input
                 type="text"
@@ -46,11 +47,11 @@ function TodoItem({ todo }) {
 
                     if (isTodoEditable) {
                         editTodo(); // edit mode me save function call
-                    } else setIsTodoEditable((prev) => !prev); // edit mode toggle
+                     } else setIsTodoEditable((prev) => !prev); // edit mode toggle
                 }}
                 disabled={todo.completed} // button disable agar todo completed hai
             >
-                {isTodoEditable ? "📁" : "✏️"} 
+                {isTodoEditable ? "📁" : "✏️"}
             </button>
             {/* Delete Todo Button */}
             <button
